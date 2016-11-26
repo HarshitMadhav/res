@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="madsum.resume.displayResume"
+    android:id="@+id/relativelayoutdResume"
+    android:background="#ffffff">
+
+    // text view id starts from 40 i.e text View40
+    // Madhav use typeface = serif in all textviews to change the font of the bold headings
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView2"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android:layout_centerHorizontal="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/relativeScroll">
+
+            <TextView
+                android:layout_width="140sp"
+                android:layout_height="40sp"
+                android:gravity="top|center_horizontal"
+                android:text="@string/resume"
+                android:clickable="true"
+                android:onClick = "onClickTkeScreen"
+                android:layout_marginTop="0dp"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:id="@+id/textView40"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:id="@+id/imageView"
+                android:background="@drawable/logo"
+                android:layout_below="@+id/textView40"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="245dp"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:hint="Name"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textView41"
+                android:layout_alignTop="@+id/imageView"
+                />
+
+            <TextView
+                android:layout_width="245dp"
+                android:layout_height="wrap_content"
+                android:hint="Address with pincode"
+                android:textSize="17sp"
+                android:id="@+id/textView42"
+                android:maxLines="2"
+                android:layout_below="@+id/textView41"
+                />
+
+            <TextView
+                android:layout_width="245dp"
+                android:layout_height="wrap_content"
+                android:hint="Contact number"
+                android:textSize="17sp"
+                android:id="@+id/textView43"
+                android:layout_below="@+id/textView42"
+
+                />
+
+            <TextView
+                android:layout_width="245dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:hint="Email Id"
+                android:id="@+id/textView44"
+                android:singleLine="true"
+                android:maxLines="2"
+                android:layout_below="@+id/textView43"
+
+                />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="3dp"
+                android:layout_below="@+id/imageView"
+                android:layout_marginTop="10dp"
+                android:id="@+id/imageView4"
+                android:background="#020202"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/carObj"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:id="@+id/textView45"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_below="@+id/imageView4"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:hint="career objective here"
+                android:layout_below="@+id/textView45"
+                android:id="@+id/textView46"
+                android:maxLines="2"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text = "@string/eduQua"
+                android:textStyle="bold"
+                android:id="@+id/textView47"
+                android:textSize="22sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_below="@+id/textView46"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:hint="College--Degree--Marks--YOP"
+                android:layout_below="@+id/textView47"
+                android:id="@+id/textView48"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="School--Intermediate--Marks--YOP"
+                android:id="@+id/textView49"
+                android:layout_below="@+id/textView48"
+                android:textSize="17sp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:layout_below="@+id/textView49"
+                android:hint="School--HighSchool--Marks--YOP"
+                android:id="@+id/textView50"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/posAsp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:id="@+id/textView51"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_below="@+id/textView50"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="\u2022position aspired here"
+                android:textSize="17sp"
+                android:id="@+id/textView52"
+                android:layout_below="@+id/textView51"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/workExp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/textView52"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+
+                android:id="@+id/textView53"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView54"
+                android:textSize="17sp"
+                android:layout_below="@+id/textView53"
+                android:hint="work experience here"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView55"
+                android:text="@string/skills"
+                android:textSize="22sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_below="@+id/textView54"
+
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView56"
+                android:textSize="17sp"
+                android:hint="skills display here"
+                android:layout_below="@+id/textView55"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView57"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="22sp"
+                android:text="@string/actAndInt"
+                android:layout_below="@+id/textView56"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView58"
+                android:textSize="17sp"
+                android:hint="Activities and Interests here"
+
+                android:layout_below="@+id/textView57"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/personal"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_below="@+id/textView58"
+                android:id="@+id/textView59"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:hint="Date of Birth"
+                android:id="@+id/textView60"
+
+                android:layout_below="@+id/textView59"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nationality"
+                android:id="@+id/textView61"
+                android:textSize="17sp"
+
+                android:layout_below="@+id/textView60"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Marital Status"
+                android:textSize="17sp"
+                android:id="@+id/textView62"
+                android:layout_below="@+id/textView61"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Languages known"
+                android:id="@+id/textView63"
+                android:textSize="17sp"
+                android:layout_below="@+id/textView62"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:textSize="17sp"
+                android:layout_below="@+id/textView63"
+                android:id="@+id/textView64"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/references"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:id="@+id/textView65"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_below="@+id/textView64"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="References here"
+                android:id="@+id/textView66"
+                android:layout_below="@+id/textView65"
+                android:textSize="17sp"
+                />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Generate File"
+                android:layout_below="@+id/textView66"
+                android:id="@+id/gen_file_button"
+                android:textSize="17sp"
+                android:onClick="onClick"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

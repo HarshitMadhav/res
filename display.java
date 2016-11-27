@@ -2,17 +2,16 @@ package madsum.resume;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 
 public class displayResume extends Activity {
 
@@ -108,10 +107,84 @@ public class displayResume extends Activity {
         dRef.setText(disRef);
         dAge.setText("Age:-  " + disAge);
 
+        tkeScr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //final RelativeLayout layout = (RelativeLayout) findViewById(R.id.relativelayoutdResume);
+                final View v = findViewById(android.R.id.content).getRootView();
+                v.setDrawingCacheEnabled(true);
+                v.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+                v.layout(0, 0, v.getMeasuredWidth(), v.getMeasuredHeight());
+
+                v.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Bitmap pic = takeScreenShot(v);
+                        try{
+                            if(pic != null){
+                                saveScreenShot(pic);
+                            }
+
+                        }catch(Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        });
+
+    }
+
+    // Take Screenshot
+    private Bitmap takeScreenShot(View v) {
+
+
+        Bitmap screenShot = null;
+
+        try {
+            int width = v.getMeasuredWidth();
+            int height = v.getMeasuredHeight();
+
+            screenShot = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+
+            //Draw to Canvas
+
+            Canvas c = new Canvas(screenShot);
+            v.draw(c);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return screenShot;
+
+    }
+
+    //Save  the screenshot to external memory
+    private void saveScreenShot(Bitmap bm) {
+        ByteArrayOutputStream bao = null;
+        File file = null;
+
+        try{
+            //compresss and write to output stream
+            bao= new ByteArrayOutputStream();
+            bm.compress(Bitmap.CompressFormat.PNG, 100, bao);
+
+            // write as a file to sd card
+            file = new File(Environment.getExternalStorageDirectory()+ File.separator+"resume.png");
+            file.createNewFile();
+
+            FileOutputStream fos = new FileOutputStream(file);
+            fos.write(bao.toByteArray());
+            fos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    }
 
 
 
-    /*    genFile.setOnClickListener(new View.OnClickListener() {
+/*       tkeScr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 bitmap = getScreenBitmap();
@@ -148,83 +221,19 @@ public class displayResume extends Activity {
         {
             Log.e("GREC", e.getMessage(), e);
         }
-        catch (IOException e)
+        catch (Exception e)
         {
             Log.e("GREC", e.getMessage(), e);
         }
     }
-}*/
+}
 
-
+*/
 
         // Another code to take the screenshot.
 
 
 
-    /*    tkeScr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final RelativeLayout layout = (RelativeLayout) findViewById(R.id.relativelayoutdResume);
-                layout.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Bitmap pic = takeScreenShot(layout);
-                        try{
-                            if(pic != null){
-                                saveScreenShot(pic);
-                            }
-
-                        }catch(Exception e){
-                            e.printStackTrace();
-                        }
-                    }
-                });
-            }
-        });
-
-    }
-
-    // Take Screenshot
-    private Bitmap takeScreenShot(View v) {
-        Bitmap screenShot = null;
-
-        try {
-            int width = v.getMeasuredWidth();
-            int height = v.getMeasuredHeight();
-
-            screenShot = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-
-            //Draw to Canvas
-
-            Canvas c = new Canvas(screenShot);
-            v.draw(c);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return screenShot;
-
-    }
-
-    //Save  the screenshot to external memory
-    private void saveScreenShot(Bitmap bm) {
-        ByteArrayOutputStream bao = null;
-        File file = null;
-
-        try{
-            //compresss and write to output stream
-            bao= new ByteArrayOutputStream();
-            bm.compress(Bitmap.CompressFormat.PNG, 30, bao);
-
-            // write as a file to sd card
-            file = new File(Environment.getExternalStorageDirectory()+ File.separator+"resume.png");
-            file.createNewFile();
-
-            FileOutputStream fos = new FileOutputStream(file);
-            fos.write(bao.toByteArray());
-            fos.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    /*
 
 }*/

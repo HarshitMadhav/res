@@ -111,7 +111,7 @@ public class displayResume extends Activity {
         tkeScr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //final RelativeLayout layout = (RelativeLayout) findViewById(R.id.relativelayoutdResume);
+               
                 final View v = findViewById(android.R.id.content).getRootView();
                 v.setDrawingCacheEnabled(true);
                 v.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
@@ -125,7 +125,7 @@ public class displayResume extends Activity {
                         try{
                             if(pic != null){
                                 saveScreenShot(pic);
-                                Toast.makeText(getApplicationContext(), "Screenshot saved in the memory by the name resume.png !", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Screenshot saved in the memory !", Toast.LENGTH_LONG).show();
                             }
 
                         }catch(Exception e){
@@ -173,7 +173,7 @@ public class displayResume extends Activity {
             bm.compress(Bitmap.CompressFormat.PNG, 100, bao);
 
             // write as a file to sd card
-            file = new File(Environment.getExternalStorageDirectory()+ File.separator+"resume.png");
+            file = new File(Environment.getExternalStorageDirectory()+ File.separator+"screenshot.png");
             file.createNewFile();
 
             FileOutputStream fos = new FileOutputStream(file);

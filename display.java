@@ -8,6 +8,7 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -67,7 +68,7 @@ public class displayResume extends Activity {
         dAge = (TextView) findViewById(R.id.textView64);
 
         tkeScr = (TextView) findViewById(R.id.textView40);
-        genFile = (Button) findViewById(R.id.gen_file_button);
+       // genFile = (Button) findViewById(R.id.gen_file_button);
 
         String disName = getIntent().getStringExtra(TAG_Name);
         String disAddr = getIntent().getStringExtra(TAG_Addr);
@@ -110,6 +111,7 @@ public class displayResume extends Activity {
         tkeScr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //final RelativeLayout layout = (RelativeLayout) findViewById(R.id.relativelayoutdResume);
                 final View v = findViewById(android.R.id.content).getRootView();
                 v.setDrawingCacheEnabled(true);
                 v.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
@@ -123,10 +125,12 @@ public class displayResume extends Activity {
                         try{
                             if(pic != null){
                                 saveScreenShot(pic);
+                                Toast.makeText(getApplicationContext(), "Screenshot saved in the memory by the name resume.png !", Toast.LENGTH_LONG).show();
                             }
 
                         }catch(Exception e){
                             e.printStackTrace();
+                            Toast.makeText(getApplicationContext(),"Error while generating the screenshot !", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -169,7 +173,7 @@ public class displayResume extends Activity {
             bm.compress(Bitmap.CompressFormat.PNG, 100, bao);
 
             // write as a file to sd card
-            file = new File(Environment.getExternalStorageDirectory()+ File.separator+"screenshot.png");
+            file = new File(Environment.getExternalStorageDirectory()+ File.separator+"resume.png");
             file.createNewFile();
 
             FileOutputStream fos = new FileOutputStream(file);

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context="madsum.resume.displayResume"
     android:id="@+id/relativelayoutdResume"
+    android:theme = "@style/AppTheme.NoActionBar"
     android:background="#ffffff">
 
     // text view id starts from 40 i.e text View40
@@ -18,7 +19,9 @@
         android:background="#ffffff"
         android:layout_centerHorizontal="true">
 
-
+    <HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -51,9 +54,9 @@
             <TextView
                 android:layout_width="245dp"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
+                android:textSize="14sp"
                 android:hint="Name"
-                android:singleLine="true"
+                android:maxLine="1"
                 android:maxLines="1"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -65,7 +68,7 @@
                 android:layout_width="245dp"
                 android:layout_height="wrap_content"
                 android:hint="Address with pincode"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:id="@+id/textView42"
                 android:maxLines="2"
                 android:layout_below="@+id/textView41"
@@ -75,7 +78,7 @@
                 android:layout_width="245dp"
                 android:layout_height="wrap_content"
                 android:hint="Contact number"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:id="@+id/textView43"
                 android:layout_below="@+id/textView42"
 
@@ -107,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/carObj"
                 android:textStyle="bold"
-                android:textSize="22sp"
+                android:textSize="14sp"
                 android:id="@+id/textView45"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_below="@+id/imageView4"
@@ -117,7 +120,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:hint="career objective here"
                 android:layout_below="@+id/textView45"
                 android:id="@+id/textView46"
@@ -131,7 +134,7 @@
                 android:text = "@string/eduQua"
                 android:textStyle="bold"
                 android:id="@+id/textView47"
-                android:textSize="22sp"
+                android:textSize="14sp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_below="@+id/textView46"
 
@@ -140,7 +143,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:hint="College--Degree--Marks--YOP"
                 android:layout_below="@+id/textView47"
                 android:id="@+id/textView48"
@@ -152,14 +155,14 @@
                 android:hint="School--Intermediate--Marks--YOP"
                 android:id="@+id/textView49"
                 android:layout_below="@+id/textView48"
-                android:textSize="17sp"
+                android:textSize="12sp"
 
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:layout_below="@+id/textView49"
                 android:hint="School--HighSchool--Marks--YOP"
                 android:id="@+id/textView50"
@@ -170,7 +173,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/posAsp"
-                android:textSize="22sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:id="@+id/textView51"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -182,7 +185,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="\u2022position aspired here"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:id="@+id/textView52"
                 android:layout_below="@+id/textView51"
 
@@ -192,7 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/workExp"
-                android:textSize="22sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_below="@+id/textView52"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -204,7 +207,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView54"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:layout_below="@+id/textView53"
                 android:hint="work experience here"
 
@@ -215,7 +218,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView55"
                 android:text="@string/skills"
-                android:textSize="22sp"
+                android:textSize="14sp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_below="@+id/textView54"
 
@@ -226,7 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView56"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:hint="skills display here"
                 android:layout_below="@+id/textView55"
 
@@ -237,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView57"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="22sp"
+                android:textSize="14sp"
                 android:text="@string/actAndInt"
                 android:layout_below="@+id/textView56"
                 android:textStyle="bold"
@@ -248,7 +251,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView58"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:hint="Activities and Interests here"
 
                 android:layout_below="@+id/textView57"/>
@@ -257,7 +260,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/personal"
-                android:textSize="22sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_below="@+id/textView58"
@@ -268,7 +271,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:hint="Date of Birth"
                 android:id="@+id/textView60"
 
@@ -280,7 +283,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Nationality"
                 android:id="@+id/textView61"
-                android:textSize="17sp"
+                android:textSize="12sp"
 
                 android:layout_below="@+id/textView60"
                 />
@@ -289,7 +292,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Marital Status"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:id="@+id/textView62"
                 android:layout_below="@+id/textView61"
 
@@ -300,7 +303,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Languages known"
                 android:id="@+id/textView63"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:layout_below="@+id/textView62"
                 />
 
@@ -308,7 +311,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Age"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 android:layout_below="@+id/textView63"
                 android:id="@+id/textView64"
                 />
@@ -317,7 +320,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/references"
-                android:textSize="22sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:id="@+id/textView65"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -330,20 +333,12 @@
                 android:hint="References here"
                 android:id="@+id/textView66"
                 android:layout_below="@+id/textView65"
-                android:textSize="17sp"
+                android:textSize="12sp"
                 />
 
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Generate File"
-                android:layout_below="@+id/textView66"
-                android:id="@+id/gen_file_button"
-                android:textSize="17sp"
-                android:onClick="onClick"
-                />
 
         </RelativeLayout>
+        </HorizontalScrollView>
     </ScrollView>
 
 </RelativeLayout>
